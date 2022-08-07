@@ -66,6 +66,12 @@ header{
     padding: 2.5rem 0;
 }
 
+@media (max-width: 43rem){
+    h2{
+        font-size: 2.5rem;
+    }
+}
+
 /* UTILIDADES*/
 
 .center {
@@ -104,6 +110,33 @@ justify-content: space-between;
 .nav-bg {
     background: var(--dark);
 }
+
+
+/* medias queries para hacer la pagina responsiva, puede ser mobile first o desktop first*/
+
+@media (max-width: 83rem) { /* sintaxis para media queri*/
+    .container {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 42rem){
+    .main-nav {
+        flex-direction: column;
+        align-items: center;
+        
+    }
+
+    .main-nav a {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+}
+
+
 
 /* seccion del hero (cuando tienen una imagen grande)*/  
 
@@ -159,6 +192,25 @@ justify-content: space-between;
     
 }
 
+
+@media(max-width: 43rem){
+    .hero-subtittle {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 0;
+
+    }
+
+    .btn {
+        width: 90%;
+        text-align: center;
+
+    }
+
+}
+
 .shadow {
     margin: auto;
     background: var(--white);
@@ -205,12 +257,27 @@ justify-content: space-between;
     align-items: center;
     
 }
+
+
+@media (max-width: 43rem) {
+    .services-cards {
+        flex-direction: column;
+    }
+
+}
+
+/* aqui inicia el formulario*/
 .form-container{
     display: flex;
     flex-direction: column;
     align-items: center;
     
 }
+
+
+
+
+/* aqui inicia el formulario*/
 
 fieldset {
     background: var(--gray);
@@ -272,6 +339,26 @@ textarea{
 width: fit-content;
 }
 
+.btn-area {
+    display: flex;
+    justify-content: flex-end;
+}
+
 footer p {
     text-align: center;
+}
+
+@media (max-width: 43rem) {
+
+    fieldset{
+        width: 90%;
+    }
+    
+    .form-section1 {
+        flex-direction: column;
+    }
+
+    .half-width{
+        width: 100%;
+    }
 }
