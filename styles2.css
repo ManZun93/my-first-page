@@ -1,0 +1,277 @@
+:root { /* pseudo clase : no existe directamente como etiqueta pero se pueden seleccionar para modificar estilos*/
+    /* root representa al elemento <html> solo que con una especificidad mayor, es decir, tendra mas jerarquia */
+
+    /* custom properties */
+    --white: #f9f9f9; /* las custom properties se escriben -- propiedad : valor */
+    --dark: #302f30;
+    --primary: #ff2825;
+    --secondary: #ded366;
+    --gray: #525253;
+    --light-gray: #5a6176;
+    --title: 3.8rem;
+    --subtitle: 3rem;
+  }
+  
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+
+    font-size: 16px; /* cuando en html font size = 62.5% y body font size = 16px se establece que 1 rem = 10px */
+    font-family: 'Alumni Sans Inline One', cursive;
+    font-family: 'Kanit', sans-serif; 
+    background: rgb(249,249,249);
+    background: linear-gradient(180deg, rgba(249,249,249,1) 0%, rgba(116,116,148,1) 100%);
+}
+
+h1 { /* para seleccionar por elemento escribimos el elemento segun etiqueta de html y abrimos llaves*/
+      /* en los selectores de elemento es obligatorio el uso de ; al final */ 
+font-size: var(--title); 
+margin: 0;  
+
+}
+
+
+h2 {
+   
+    font-size: var(--subtitle);
+   
+}
+
+
+h1 span {
+    font-size: 1.6rem;
+}
+
+
+/* existen 2 unidades de medidas: absolutas y relativas */
+/* las absolutas siempre miden lo mismo */
+/* las relativas pueden tener variaciones en su medida */
+/* px = medida por defecto para las absolutas */
+/* para relativas usamos  em (relativa al tamaño de fuente de su padre)y rem*/
+/* rem es un tamaño personalizado relativo al tamaño del elemento raiz */
+a {
+text-decoration: none;
+}
+
+header{
+    background: var(--white);
+    padding: 2.5rem 0;
+}
+
+/* UTILIDADES*/
+
+.center {
+    text-align: center;
+}
+
+/* para barra de navegacion*/  
+.container {
+    width: 120rem;
+}
+
+.main-nav {/* para seleccionar una clase utilizamos punto y el nombre de la clase*/   
+margin: auto;
+background: var(--dark);
+display: flex;
+justify-content: space-between;
+
+} 
+
+.main-nav a { /* los elementos en linea no heredan las propiedades de box model*/
+    display: inline-block; 
+    color: var(--white);
+    padding: 1rem;
+    font-weight: 700;
+    font-size: 2rem;
+
+}
+
+.main-nav a:hover { /* hover sirve para cambiar el color al pasar el cursor*/
+
+    background: var(--primary);
+    color: var(--dark)
+
+}
+
+.nav-bg {
+    background: var(--dark);
+}
+
+/* seccion del hero (cuando tienen una imagen grande)*/  
+
+.hero {
+    background-image:url(./qué-es-un-programador-Back-end-y-Front-end002.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    height: 45rem;
+    color: var(--white);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+
+    
+}
+
+.hero::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #302f3066;
+    position: absolute; /* absolute se posiciona con referencia al elemento padre mas cercano que este posicionado, de lo contrario se posiciona respecto al html*/
+    top: 0;
+    left: 0;
+}
+
+.hero-subtittle{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+
+.move-front {
+    position: relative;
+    z-index: 1;
+}
+
+.btn {
+    background: var(--primary);
+    padding: 1rem 3rem;
+    border-radius: 0.5rem;
+    color: var(--white);
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    
+}
+
+.shadow {
+    margin: auto;
+    background: var(--white);
+    border-radius: 1rem;
+    padding: 2rem 2rem 1rem 2rem;
+    box-shadow: 0px 5px 30px 4px rgba(0,0,0,0.57);
+
+}
+
+.services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.services-cards {
+    display: flex;
+    gap: 1rem;
+}
+
+.services h3 {
+    color: var(--primary);
+    font-weight: 400;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card p{
+    text-align: center;
+   
+}
+
+.icon-container {
+    width: 13rem;
+    height: 13rem;
+    background: var(--gray);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+fieldset {
+    background: var(--gray);
+    width: 55rem;
+    border-radius: 1rem;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2.5rem 3rem 4rem 3rem;
+    
+}
+
+legend{
+    text-align: center;
+    color: var(--primary);
+    text-transform: uppercase;
+    padding-top: 5rem;
+    font-weight: 700;
+    font-size: 2rem;
+    
+}
+
+label {
+    color: var(--white);
+    margin-bottom: 0.5rem;
+
+
+}
+
+.form-section1{
+    display: flex;
+    gap: 0.5rem
+   
+    
+
+}
+.input-group{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.half-width {
+    width: 50%;
+}
+
+input, textarea {
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+}
+
+textarea{
+    resize: none;
+}
+
+.send-btn {
+width: fit-content;
+}
+
+footer p {
+    text-align: center;
+}
